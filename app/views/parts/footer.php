@@ -1,0 +1,59 @@
+<footer class="section hero is-light">
+          <div class="container">
+            <div class="content has-text-centered">
+              <div class="tabs">
+                <ul>
+                  <li class="is-active"><a>Главная</a></li>
+                  <li><a>Природа</a></li>
+                  <li><a>Дизайн и Интерьер</a></li>
+                  <li><a>Животные</a></li>
+                  <li><a>Природа</a></li>
+                  <li><a>Дизайн и Интерьер</a></li>
+                  <li><a>Животные</a></li>
+                  <li><a>Природа</a></li>
+                  <li><a>Дизайн и Интерьер</a></li>
+                  <li><a>Животные</a></li>
+                </ul>
+              </div>
+              <p>
+                <strong>Marlin</strong> - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit expedita consequatur, et. Unde, nulla, dicta.
+              </p>
+              <p class="is-size-7">
+                All rights reserved. 2018
+              </p>
+            </div>
+          </div>
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+  </script>
+
+</html>
+
