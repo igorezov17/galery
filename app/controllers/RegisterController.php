@@ -14,10 +14,12 @@ class RegisterController extends Controller
     public $regModel;
 
 
+
     public function __construct(RegisterModel $regModel)
     {
         parent::__construct();
         $this->regModel = $regModel;
+        
     }
 
     public function showForm()
@@ -27,12 +29,14 @@ class RegisterController extends Controller
 
     public function registerin()
     {
-        try 
-        {
-            $userID = $this->regModel->make($_POST['email'], $_POST['password'], $_POST['username']);
-            
-            redirect('/login');
+
+        try {
+
+        $userId = $this->regModel->make($_POST['email'], $_POST['password'], $_POST['username']);
+        $this->database->getVerify($userId);
+        redirect('/login');
         }
+        
         catch (\Delight\Auth\InvalidEmailException $e) {
             flash()->error(['Неправильный email']);
         }
@@ -47,6 +51,8 @@ class RegisterController extends Controller
         }
             
         return redirect('/register');
+
+        
     }
 
 

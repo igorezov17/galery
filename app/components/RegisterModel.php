@@ -19,12 +19,12 @@ class RegisterModel
         $this->auth = $auth;
     }
 
-    public function make($username, $email, $password)
+    public function make($email, $password, $username)
     {
-        $userId = $this->auth->register($email, $password, $username, function ($selector, $token){
+        $userId = $this->auth->register($email, $password, $username, function ($selector, $token) use($email) {
             // send `$selector` and `$token` to the user (e.g. via email
-                
         });
+
         return $userId;
     }
 

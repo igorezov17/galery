@@ -158,6 +158,13 @@ class ComposerStaticInit17289d90b09c95b7a588ee4eaec7892e
     );
 
     public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JasonGrimes' => 
+            array (
+                0 => __DIR__ . '/..' . '/jasongrimes/paginator/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 

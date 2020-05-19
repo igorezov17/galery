@@ -33,6 +33,24 @@ class Database
             return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public function getVerify($id)
+    {
+        $update = $this->queryFactory->newUpdate();
+        $update
+            ->table('users')                  // update this table
+            ->cols(['verified'])
+            ->set('verified', '1') 
+            ->bindValues(['id' => $id])           // raw value as "(ts) VALUES (NOW())"
+            ->where('id = :id'); 
+
+            // prepare the statement
+            $sth = $this->pdo->prepare($update->getStatement());
+
+            // execute with bound values
+            $sth->execute($update->getBindValues());
+    }
+
     public function getOne($id)
     {
         $select = $this->queryFactory->newSelect();

@@ -44,20 +44,20 @@ class LoginController
         try {
             $this->auth->login($_POST['login'], $_POST['password']);
         
-            echo 'User is logged in';
+            redirect('/');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {
-            die('Wrong email address');
+            flash()->error(['Неверный адрес электронной почты']);
         }
         catch (\Delight\Auth\InvalidPasswordException $e) {
-            die('Wrong password');
+            flash()->error(['Неверный паароль']);
         }
         catch (\Delight\Auth\EmailNotVerifiedException $e) {
-            die('Email not verified');
+            flash()->error(['Email not verified']);
         }
         catch (\Delight\Auth\TooManyRequestsException $e) {
-            die('Too many requests');
+            flash()->error(['Слишком много попыток']);
         }
-        
+        redirect ('/login');
     }
 }

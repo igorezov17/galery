@@ -15,6 +15,7 @@
         <div class="columns">
           <div class="column"></div>
           <div class="column is-quarter auth-form">
+          <?php echo flash() ?>
             <form action="/loginin" method="POST">
               <div class="field">
                 <label class="label">Email</label>
