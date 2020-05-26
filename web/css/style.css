@@ -26,8 +26,22 @@ time {
 	font-size: 18px;
 }
 
-.pt-100 {
-	padding-top: 100px;
+.manager-links a {
+    display: block;
+    margin: 10px;
+    text-align: left;
+}
+.my-photo {
+    flex-flow: column-reverse;
+}
+
+.my-photo a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.my-photo .media-left {
+    width: 100%;
 }
 
 .alert {
@@ -42,21 +56,4 @@ time {
     color: #fff;
 }
 
-.manager-links a {
-  display: block;
-  margin: 10px;
-  text-align: left;
-}
 
-.my-photo {
-  flex-flow: column-reverse;
-}
-
-.my-photo a {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.my-photo .media-left {
-  width: 100%;
-}

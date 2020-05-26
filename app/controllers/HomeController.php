@@ -4,30 +4,39 @@ namespace app\controllers;
 
 use app\components\Database;
 use League\Plates\Engine;
+use app\components\models\Home;
 
 class HomeController
 {
     private $view;
     private $database;
+    private $homeModel;
 
-    public function __construct(Engine $views, Database $database)
+    public function __construct(Engine $views, Database $database, Home $homeModel)
     {
         $this->view = $views;
         $this->database = $database;
+        $this->homeModel = $homeModel;
     }
 
     public function index()
     {
-
-        $photos = $this->database->getAll();
-
-
+        $photos = $this->database->getImageAndCategory(8);
         echo $this->view->render('home', ['images' => $photos]);
     }
 
     public function show($id)
     {
         $photo = $this->database->getOne($id);
-        echo $this->view->render('image/show', ['image' => $photo]);
+        $ImageAndUsers = $this->homeModel->getImageAndUser();
+        echo $this->view->render('image/show', ['image' => $photo, 'imagesandusers' => $ImageAndUsers]);
     }
+
+    public function category($id)
+    {
+        $imagefromcategory = $this->database->findAllForCategory( $id);
+
+        echo $this->view->render('category', ['images' => $imagefromcategory]);
+    }
+
 }

@@ -15,6 +15,9 @@
       <section class="section main-content">
         <div class="container">
           <div class="columns  is-multiline">
+
+            
+
             <?php foreach ($images as $image): ?>
                 <div class="column is-one-quarter">
               <div class="card">
@@ -33,11 +36,11 @@
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
-                    <p class="title is-5"><a href="<?php echo "show/" . $image['id']; ?>">Природа</a></p>
+                    <p class="title is-5"><a href="<?php echo "show/" . $image['id']; ?>"><?php echo $image['catname']; ?></a></p>
                     </div>
                     <div class="media-right">
                       <p  class="is-size-7">Размер: 1280x760</p>
-                      <time datetime="2016-1-1" class="is-size-7">Добавлено: 12.02.2018</time>
+                      <time datetime="2016-1-1" class="is-size-7">Добавлено: <?php echo $image['date']; ?></time>
                     </div>
                   </div>
                 </div>

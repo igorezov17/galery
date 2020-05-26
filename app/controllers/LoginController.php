@@ -60,4 +60,10 @@ class LoginController
         }
         redirect ('/login');
     }
+
+    public function logout()
+    {
+        $this->auth->logout();
+        redirect("/");
+    }
 }

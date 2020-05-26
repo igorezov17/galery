@@ -10,10 +10,7 @@ use app\controllers\Controller;
 
 class RegisterController extends Controller
 {
-
     public $regModel;
-
-
 
     public function __construct(RegisterModel $regModel)
     {

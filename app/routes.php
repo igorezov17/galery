@@ -48,9 +48,26 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->get('/register',  ["app\controllers\RegisterController", "showForm"]);
     $r->post('/registerin', ["app\controllers\RegisterController", "registerin"]);
 
+    $r->get('/profile/info', ["app\controllers\ProfileController", 'showInfo']);
+    $r->get('/securiti', ["app\controllers\ProfileController", 'showInfo']);
+
+    $r->get('/logout', ["app\controllers\LoginController", "logout"]);
 
     $r->get('/news', ["app\controllers\NewsController", "getPost"]);
-    
+
+
+    $r->get('/photos/create', ["app\controllers\ImageController", "create"]);
+    $r->get('/photo/store', ["app\controllers\ImageController", "store"]);
+    $r->get('/category/{id}', ["app\controllers\HomeController", "category"]);
+    $r->get('/images/delete/{id}', ["app\controllers\ImageController", "deleteImage"]);
+    $r->get('/myimages', ["app\controllers\ImageController", "index"]);
+
+
+    $r->addGroup('/admin', function (RouteCollector $r) {
+        $r->get('/', ["app\Controllers\Admin\HomeController", 'index']);
+
+        });
+
     /*$r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
     // The /{title} suffix is optional
     $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');*/
@@ -70,6 +87,7 @@ $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         // ... 404 Not Found
+        dd(404);
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
