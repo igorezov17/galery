@@ -44,31 +44,6 @@ class Database
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
 
-        /*$select = $this->queryFactory->newSelect();
-        $select
-            ->cols([
-                'photos.id',
-                'photos.title',
-                'photos.date',
-                'category.title as catname' 
-            ])
-            ->from('photos')
-            ->limit($limite)
-            ->join(
-                'INNER',
-                'category as category',
-                'photos.category_id = category.id'
-            );
-
-            $sth = $this->pdo->prepare($select->getStatement());
-
-            // bind the values and execute
-            $sth->execute($select->getBindValues());
-
-            // get the results back as an associative array
-            return $sth->fetchAll(PDO::FETCH_ASSOC);*/
-
-
     }
 
     public function getVerify($id)

@@ -66,6 +66,22 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addGroup('/admin', function (RouteCollector $r) {
         $r->get('/', ["app\Controllers\Admin\HomeController", 'index']);
 
+        $r->get('/category', ["app\Controllers\Admin\CategoryController", 'index']);
+        $r->get('/category/{id}/edit', ["app\Controllers\Admin\CategoryController", 'edit']);
+        $r->get('/category/create', ["app\Controllers\Admin\CategoryController", 'create']);
+
+        $r->get('/photos', ["app\Controllers\Admin\PhotosController", 'index']);
+        $r->get('/photos/{id}/edit', ["app\Controllers\Admin\PhotosController", 'edit']);
+        $r->get('/photos/create', ["app\Controllers\Admin\PhotosController", 'create']);
+
+        $r->get('/users', ["app\Controllers\Admin\UserController", 'index']);
+        $r->get('/users/create', ["app\Controllers\Admin\UserController", 'create']);
+        $r->get('/users/{id}/edit', ["app\Controllers\Admin\UserController", 'edit']);
+
+        $r->get('/news', ["app\Controllers\Admin\NewsController", 'index']);
+        $r->get('/news/create', ["app\Controllers\Admin\NewsController", 'create']);
+        $r->get('/news/edit', ["app\Controllers\Admin\NewsController", 'edit']);
+
         });
 
     /*$r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');

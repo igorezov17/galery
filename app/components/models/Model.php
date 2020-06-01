@@ -1,6 +1,6 @@
 <?php 
 
-namespace app\components\models\Model;
+namespace app\components\models;
 
 use Aura\SqlQuery\QueryFactory;
 use PDO;

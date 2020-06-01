@@ -35,6 +35,8 @@
                             <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" >
+                        <label for="exampleInputEmail1">Новость</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" >
                       </div>
 
                       <div class="form-group">

@@ -7,7 +7,7 @@ use League\Plates\Engine;
 use app\components\NewsService;
 
 
-class NewsController
+class NewsController 
 {
     public $database;
     public $views;
@@ -22,8 +22,16 @@ class NewsController
 
     public function getPost()
     {
-        $data = $this->newservice->newPost();
-        dd($data);
+        /*$ch = curl_init('https://yandex.ru');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        $html = curl_exec($ch);
+        curl_close($ch);
+         
+        echo $html;*/
+
+        echo $this->views->render('news');
     }
 
 }

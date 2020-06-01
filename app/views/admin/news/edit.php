@@ -1,4 +1,5 @@
 <?php $this->layout('admin/layout'); ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 
@@ -24,7 +25,7 @@
           <div class="box-body">
             <div class="">
             <div class="box-header">
-              <h2 class="box-title">Изменить изображение</h2>
+              <h2 class="box-title">Изменить категорию</h2>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -32,31 +33,9 @@
                     <form action="" action="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Мой любимый город">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Краткое описание</label>
-                        <textarea class="form-control" name="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, sit.</textarea>
-                      </div>
-
-                      <div class="form-group">
-                        <label>Категория</label>
-                        <select class="form-control select2" style="width: 100%;">
-                          <option>Города</option>
-                          <option>Компьютеры</option>
-                          <option>Животные</option>
-                          <option selected="selected">Абстракция</option>
-                          <option>Небо</option>
-                          <option>Деревья</option>
-                          <option>Шарики</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label>Изображение</label>
-                        <input type="file"> <br>
-                        <img src="../assets/img/photo1.png" width="200" alt="">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры">
+                        <label for="exampleInputEmail1">Новость</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры">
                       </div>
 
                       <div class="form-group">
@@ -82,5 +61,5 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 
+            
