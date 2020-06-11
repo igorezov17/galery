@@ -291,6 +291,48 @@
         ]
     },
     {
+        "name": "electrolinux/phpquery",
+        "version": "0.9.6",
+        "version_normalized": "0.9.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/electrolinux/phpquery.git",
+            "reference": "6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/electrolinux/phpquery/zipball/6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a",
+            "reference": "6cb8afcfe8cd4ce45f2f8c27d561383037c27a3a",
+            "shasum": ""
+        },
+        "time": "2013-03-21T12:39:33+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "phpQuery/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tobiasz Cudnik",
+                "email": "tobiasz.cudnik@gmail.com",
+                "homepage": "https://github.com/TobiaszCudnik",
+                "role": "Developer"
+            },
+            {
+                "name": "didier Belot",
+                "role": "Packager"
+            }
+        ],
+        "description": "phpQuery is a server-side, chainable, CSS3 selector driven Document Object Model (DOM) API based on jQuery JavaScript Library",
+        "homepage": "http://code.google.com/p/phpquery/"
+    },
+    {
         "name": "guzzlehttp/psr7",
         "version": "1.6.1",
         "version_normalized": "1.6.1.0",
@@ -890,6 +932,41 @@
             "phpdoc",
             "reflection"
         ]
+    },
+    {
+        "name": "phpquery/phpquery",
+        "version": "0.0.2",
+        "version_normalized": "0.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/elboza/PhpQuery.git",
+            "reference": "9556e6d903b89796491caee53baac426c9850159"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/elboza/PhpQuery/zipball/9556e6d903b89796491caee53baac426c9850159",
+            "reference": "9556e6d903b89796491caee53baac426c9850159",
+            "shasum": ""
+        },
+        "time": "2019-08-08T19:13:26+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpQuery\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Beerware"
+        ],
+        "authors": [
+            {
+                "name": "Fernando Iazeolla",
+                "email": "fernando.iazeolla@gmail.com"
+            }
+        ],
+        "description": "jquery for php"
     },
     {
         "name": "psr/container",

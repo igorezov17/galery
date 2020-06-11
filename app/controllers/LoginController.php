@@ -32,17 +32,18 @@ class LoginController
 
     public function loginin()
     {
-        //dd("Мы внутри loginIn()");
-        /*if ($this->auth->login($_POST['email'], $_POST['password']))
-        {
-            echo 'User is logged in';
-        } else {
-            echo "нет";
-        }*/
 
 
         try {
-            $this->auth->login($_POST['login'], $_POST['password']);
+
+            $rememberDuration = null;
+
+            if (isset($_POST['remember'])) {
+                // keep logged in for one year
+                $rememberDuration = (int) (60 * 60 * 24 * 365.25);
+            }
+
+            $this->auth->login($_POST['login'], $_POST['password'], $rememberDuration);
         
             redirect('/');
         }

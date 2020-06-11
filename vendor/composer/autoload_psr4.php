@@ -12,6 +12,7 @@ return array(
     'Respect\\Validation\\' => array($vendorDir . '/respect/validation/library'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'PhpQuery\\' => array($vendorDir . '/phpquery/phpquery/src'),
     'PhpDocReader\\' => array($vendorDir . '/php-di/phpdoc-reader/src/PhpDocReader'),
     'League\\Plates\\' => array($vendorDir . '/league/plates/src'),
     'Invoker\\' => array($vendorDir . '/php-di/invoker/src'),

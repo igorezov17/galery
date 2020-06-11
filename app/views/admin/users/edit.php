@@ -47,27 +47,10 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Роль</label>
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">Обычный пользователь</option>
-                          <option>Администратор</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
                         <label for="exampleInputEmail1">Аватар</label>
                         <input type="file" id="exampleInputEmail1" >
                         <br> 
                         <img src="../assets/img/avatar04.png" width="200" alt="">
-                      </div>
-
-                      <div class="form-group">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">
-                            Бан
-                          </label>
-                        </div>
                       </div>
 
                       <div class="form-group">

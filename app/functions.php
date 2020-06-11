@@ -82,3 +82,19 @@ function getAllCategory()
 /*function getImage($image) {
     return (new \app\components\ImageManager())->getImage($image);
 }*/
+
+function parse($p1, $p2, $p3)
+{
+//
+}
+
+
+function writen($obt)
+{
+    echo "<pre>";
+    print_r($obt);
+    echo "</pre>";
+}
+
+
+//$string = file_get_contents('https://mag.auto.ru/article/havalb06teaser/');

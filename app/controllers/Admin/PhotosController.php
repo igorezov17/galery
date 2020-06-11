@@ -22,14 +22,15 @@ class PhotosController extends Controller
         echo $this->view->render('admin/photos/index', ['images' => $photos]);
     }
 
-    public function create()
+    public function delete($id)
     {
-
+        dd("Вы в delete, ваш id = $id");
     }
 
-    public function edit()
+    public function edit($id)
     {
-        dd("Вы на edit");
+        $img = $this->database->getImageAndCategory();
+        echo $this->view->render('admin/photos/edit', ['$imgC' => $img]);
     }
 }
 

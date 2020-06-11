@@ -17,8 +17,20 @@ class NewsService
         $this->pdo = $pdo;
     }
 
-    public function newPost()
+    public function getAllNews()
     {
-        return 'New Post';
+        $select = $this->queryFactory->newSelect();
+        $select
+            ->cols(['*'])
+            ->from('news');
+
+
+            $sth = $this->pdo->prepare($select->getStatement());
+
+            // bind the values and execute
+            $sth->execute($select->getBindValues());
+
+            // get the results back as an associative array
+            return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 }

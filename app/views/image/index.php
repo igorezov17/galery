@@ -1,6 +1,7 @@
 <?php $this->layout('layout') ?>
 <?php //dd($imagesFromUser); ?>
-      <section class="hero is-primary">
+     
+<section class="hero is-primary">
         <div class="hero-body">
           <div class="container">
             <h1 class="title">
@@ -29,8 +30,11 @@
                   <div class="media my-photo">
                     <div class="media-left">
                       <p class="title is-5">
-                        <a href="category.html" class="button is-warning">
+                        <a href="/image/<?php echo $image['id']?>/edit" class="button is-warning">
                           <i class="fa fa-edit"></i>
+                        </a>
+                          <a href="/image/rotate/<?php echo $image['id']?>" class="button is-warning">
+                            <i class="fa fa-history"></i>
                         </a>
                         <a href="/images/delete/<?php echo $image['id'] ?>" class="button is-danger">
                           <i class="fa fa-times"></i>

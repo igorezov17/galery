@@ -16,6 +16,32 @@ class Image
         $this->pdo = $pdo;
     }
 
+
+    public function update($table, $data, $id)
+    {
+        if ($_GET['name'] == 0 || $_GET['desc'] == 0 || $_GET['resume'])
+        {
+            flash()->error(["Вы заполнили не все поля"]);
+            redirect('/photos/edit');
+        } else {
+
+            dd("ты на update");
+            $update = $this->queryFactory->newUpdate();
+            $update
+                ->table('photos')                  // update this table
+                ->cols(['verified'])
+                ->set('verified', '1') 
+                ->bindValues(['id' => $id])           // raw value as "(ts) VALUES (NOW())"
+                ->where('id = :id'); 
+    
+                // prepare the statement
+                $sth = $this->pdo->prepare($update->getStatement());
+    
+                // execute with bound values
+                $sth->execute($update->getBindValues());
+        }
+    }
+
     public function delete($table, $id)
     {
 

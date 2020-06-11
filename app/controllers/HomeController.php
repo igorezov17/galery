@@ -21,7 +21,9 @@ class HomeController
 
     public function index()
     {
-        $photos = $this->database->getImageAndCategory(8);
+        $photos = $this->database->getImageAndCategory();
+
+
         echo $this->view->render('home', ['images' => $photos]);
     }
 

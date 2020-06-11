@@ -62,28 +62,19 @@
               </div>
             </div>
 
-            <div class="field">
-              <div class="control">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Я согласен с <a href="#">правилами сайта</a>
-                </label>
-              </div>
-            </div>
+
 
             <div class="field is-grouped">
               <div class="control">
                 <button class="button is-link">Зарегистрироваться</button>
               </div>
               <div class="control">
-                <a class="button is-text" href="index.html">Отмена</a>
+                <a class="button is-text" href="/">Отмена</a>
               </div>
             </div>
             </form>
 
-            <div class="field">
-                <p>Уже зарегистрированы? <b><a href="/login">Войти</a></b></p>
-            </div>
+
           </div>
           <div class="column"></div>
         </div>

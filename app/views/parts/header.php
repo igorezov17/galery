@@ -74,10 +74,11 @@
                             <div class="account control">
                                 <p>
                                      Здравствуйте, <b><?= auth()->getUsername()?></b>
+                                     
                                 </p>
                             </div>
                             <p class="control">
-                                <a class="button is-info" href="/profile/info">
+                                <a class="button is-info" href="/profile/info?>>"
                                   <span class="icon">
                                     <i class="fas fa-user"></i>
                                   </span>

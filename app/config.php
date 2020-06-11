@@ -2,9 +2,9 @@
 
 return [
     "database" => [
-        "driver" => "mysql",
+        "driver" => "pgsql",
         "host" => "localhost",
-        "database_name" => "tests",
+        "database_name" => "ggg",
         "username" => "root",
         "password" => ""
     ],

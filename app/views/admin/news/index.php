@@ -39,14 +39,13 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php foreach($news as $new): ?>
                   <tr>
-                    <td>1</td>
-                    <td>Города</td>
-                    <td>Новости в городе</td>
+                    <td><?php echo $new['id']; ?></td>
+                    <td><?php echo $new['title']; ?></td>
+                    <td><?php echo $new['description']; ?></td>
                     <td>
-                      <a href="#" class="btn btn-info">
-                        <i class="fa fa-eye"></i>
-                      </a>
+
                       <a href="/admin/news/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
@@ -55,40 +54,8 @@
                       </a>
                     </td>
                   </tr>
-
-                  <tr>
-                    <td>2</td>
-                    <td>Фауна</td>
-                    <td>Новости в природе</td>
-                    <td>
-                      <a href="#" class="btn btn-info">
-                        <i class="fa fa-eye"></i>
-                      </a>
-                      <a href="edit.html" class="btn btn-warning">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
-                        <i class="fa fa-remove"></i>
-                      </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>3</td>
-                    <td>Компьютеры</td>
-                    <td>Новости в мире it</td>
-                    <td>
-                      <a href="#" class="btn btn-info">
-                        <i class="fa fa-eye"></i>
-                      </a>
-                      <a href="edit.html" class="btn btn-warning">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
-                        <i class="fa fa-remove"></i>
-                      </a>
-                    </td>
-                  </tr>
+                  <?php endforeach; ?>
+                 
                 </tbody>
                 <tfoot>
                   <tr>

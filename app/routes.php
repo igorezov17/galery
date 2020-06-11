@@ -6,6 +6,7 @@ use Aura\SqlQuery\QueryFactory;
 use League\Plates\Engine;
 use Delight\Auth\Auth;
 use FastRoute\RouteCollector;
+use PhpQuery\PhpQuery;
 
 
 
@@ -14,8 +15,10 @@ $containerBuilder->addDefinitions([
     Engine::class => function() {
         return new Engine('../app/views');
     },
+
     PDO::class => function() {
-        return new PDO("mysql:host=localhost;dbname=tests;charset=utf8", "root", "");
+        return new PDO("mysql:host=localhost;dbname=tests;charset=utf8", "admin", "123");
+
     },
     QueryFactory::class  =>  function() {
         return new QueryFactory('mysql');
@@ -49,18 +52,23 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->post('/registerin', ["app\controllers\RegisterController", "registerin"]);
 
     $r->get('/profile/info', ["app\controllers\ProfileController", 'showInfo']);
-    $r->get('/securiti', ["app\controllers\ProfileController", 'showInfo']);
+    $r->get('/profile/security', ["app\controllers\ProfileController", 'securiti']);
+    $r->post('/profile/update', ["app\controllers\ProfileController", 'updateProfile']);
+    $r->post('/profile/postSecurity', ["app\controllers\ProfileController", 'postSecurity']);
 
     $r->get('/logout', ["app\controllers\LoginController", "logout"]);
 
-    $r->get('/news', ["app\controllers\NewsController", "getPost"]);
+    $r->get('/news', ["app\controllers\NewsController", "index"]);
 
 
     $r->get('/photos/create', ["app\controllers\ImageController", "create"]);
     $r->get('/photo/store', ["app\controllers\ImageController", "store"]);
+    $r->get('/image/{id}/edit', ["app\controllers\ImageController", "edit"]);
     $r->get('/category/{id}', ["app\controllers\HomeController", "category"]);
     $r->get('/images/delete/{id}', ["app\controllers\ImageController", "deleteImage"]);
     $r->get('/myimages', ["app\controllers\ImageController", "index"]);
+
+    $r->get('/image/rotate/{id}', ["app\controllers\ImageController", "rotate"]);
 
 
     $r->addGroup('/admin', function (RouteCollector $r) {
@@ -72,7 +80,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
         $r->get('/photos', ["app\Controllers\Admin\PhotosController", 'index']);
         $r->get('/photos/{id}/edit', ["app\Controllers\Admin\PhotosController", 'edit']);
-        $r->get('/photos/create', ["app\Controllers\Admin\PhotosController", 'create']);
+        $r->get('/photos/{id}/delete', ["app\Controllers\Admin\PhotosController", 'delete']);
 
         $r->get('/users', ["app\Controllers\Admin\UserController", 'index']);
         $r->get('/users/create', ["app\Controllers\Admin\UserController", 'create']);

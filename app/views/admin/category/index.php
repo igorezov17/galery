@@ -36,16 +36,16 @@
                   <tr>
                     <th>#</th>
                     <th>Название</th>
-                    <th>Пост</th>
+
                     <th>Действия</th>
                   </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($categories as $category): ?>
                   <tr>
-                    <td>1</td>
-                    <td>Mercedes</td>
-                    <td>Публике придставили новое поколение</td>
+                    <td><?php echo $category['id']; ?></td>
+                    <td><?php echo $category['title']; ?></td>
+ 
                     <td>
 
                       <a href="/admin/category/<?php echo $category['id']; ?>/edit" class="btn btn-warning">

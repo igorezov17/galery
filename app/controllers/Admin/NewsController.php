@@ -2,18 +2,23 @@
 
 namespace app\controllers\Admin;
 
+use app\components\NewsService;
 use app\Controllers\Controller;
 
 class NewsController extends Controller
 {
-    public function __construct()
+    public $newsService;
+
+    public function __construct(NewsService $newsService)
     {
         parent::__construct();
+        $this->newsService = $newsService;
     }
 
     public function index()
     {
-        echo $this->view->render('admin/news/index');
+        $posts = $this->newsService->getAllNews();
+        echo $this->view->render('admin/news/index', ['news' => $posts]);
     }
 
     public function create()

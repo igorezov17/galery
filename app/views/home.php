@@ -18,7 +18,9 @@
 
             
 
-            <?php foreach ($images as $image): ?>
+            <?php 
+
+            foreach ($images as $image): ?>
                 <div class="column is-one-quarter">
               <div class="card">
                 <div class="card-image">

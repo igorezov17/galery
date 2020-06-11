@@ -25,7 +25,11 @@ class RegisterModel
             // send `$selector` and `$token` to the user (e.g. via email
         });
 
+
+
         return $userId;
     }
+
+
 
 }

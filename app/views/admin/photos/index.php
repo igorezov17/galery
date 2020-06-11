@@ -55,10 +55,10 @@
                     </td>
                     <td>
 
-                      <a href="admin/photos/<?php echo $image['phtId']; ?>/edit" class="btn btn-warning">
+                      <a href="photos/<?php echo $image['phtId']; ?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="photos/<?php echo $image['phtId']; ?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

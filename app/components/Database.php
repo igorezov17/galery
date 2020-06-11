@@ -19,6 +19,7 @@ class Database
 
     public function getAll($table, $limite = null)
     {
+       
         $select = $this->queryFactory->newSelect();
         $select
             ->cols(['*'])
@@ -36,15 +37,19 @@ class Database
 
     }
 
-    public function getImageAndCategory($limite = null)
+    public function getImageAndCategory()
     {
+        //dd($this->queryFactory);
+        $sql = 'SELECT photos.id, photos.title, photos.image,  photos.date, category.title as catname FROM photos 
+        INNER JOIN category ON photos.category_id = category.id';
 
-        $sql = 'SELECT photos.id, photos.title, photos.image,  photos.date, category.title as catname FROM photos INNER JOIN category ON photos.category_id = category.id';
         $sth = $this->pdo->prepare($sql);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
 
+
     }
+
 
     public function getVerify($id)
     {
@@ -91,21 +96,7 @@ class Database
             ->where('id = :id'); 
     }
 
-    public function getPaginatedFrom($table,$row, $id, $page = 1, $rows = 1)
-    {
-        $select = $this->queryFactory->newSelect();
-        $select->cols(['*'])
-            ->from($table)
-            ->where("$row = :row")
-            ->bindValue(':row', $id)
-            ->page($page)
-            ->setPaging($rows);
-        $sth = $this->pdo->prepare($select->getStatement());
 
-        $sth->execute($select->getBindValues());
-
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     public function getCount($table, $row, $value)
     {
@@ -160,25 +151,7 @@ class Database
 
     public function findAllForCategory($id)
     {
-        /*$select = $this->queryFactory->newSelect();
-        $select
-            ->cols([
-                'id',
-                'title',
-                'image',
-                'date'
-                ])
-            ->from($table)
-            ->bindvalues([':id' => $id])
-            ->where('category_id = :id');
 
-        $sth = $this->pdo->prepare($select->getStatement());
-
-            // bind the values and execute
-        $sth->execute($select->getBindValues());
-
-            // get the results back as an associative array
-        return $result = $sth->fetchAll(PDO::FETCH_ASSOC);*/
         $sql = 'SELECT photos.id AS photoid, photos.title AS phototitle, photos.image AS photosimg, photos.date AS photodt, category.id AS catid, category.title AS cattitle FROM photos INNER JOIN category ON photos.category_id = category.id WHERE category.id = :id';
 
         $sth = $this->pdo->prepare($sql);

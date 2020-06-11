@@ -10,7 +10,9 @@
         "delight-im/auth": "^3.1",
         "respect/validation": "^1.1",
         "illuminate/support": "^5.2",
-        "jasongrimes/paginator": "^1.0"
+        "jasongrimes/paginator": "^1.0",
+        "electrolinux/phpquery": "^0.9.6",
+        "phpquery/phpquery": "^0.0.2"
     },
 
     "autoload": {

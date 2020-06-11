@@ -44,7 +44,7 @@
               <div class="field">
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" name="remember">
                     Запомнить меня
                   </label>
                 </div>
@@ -59,10 +59,7 @@
                 </div>
               </div>
             </form>
-            <div class="field">
-              <p>Забыли пароль? <b><a href="password-reset.html">Восстановление пароля</a></b></p>
-              <p>Не пришло письмо подтверждения? <b><a href="email-verification.html">Переотправить</a></b></p>
-            </div>
+           
           </div>
           <div class="column"></div>
         </div>
