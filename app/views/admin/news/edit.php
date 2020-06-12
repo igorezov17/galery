@@ -25,24 +25,30 @@
           <div class="box-body">
             <div class="">
             <div class="box-header">
-              <h2 class="box-title">Изменить категорию</h2>
+              <h2 class="box-title">Изменить поста</h2>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="col-md-6">
-                    <form action="" action="post">
+
+                    <form action="/admin/news/updateNew/<?php echo $id; ?>" method="post"  enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры">
+                        <input type="text" class="form-control" id="exampleInputEmail1"  name="title">
                         <label for="exampleInputEmail1">Новость</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="description">
                       </div>
+                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Изображение</label>
+                                        <input type="file" id="exampleInputEmail1" name="image">
 
+                                    </div>
                       <div class="form-group">
                         <button class="btn btn-warning">Изменить</button>
                       </div>
-                    </form>
+                    
                 </div>
+                </form>
             </div>
             <!-- /.box-body -->
           </div>

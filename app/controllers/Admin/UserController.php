@@ -27,7 +27,6 @@ class UserController extends Controller
 
     public function edit()
     {
-
         echo $this->view->render('admin/users/edit');
     }
 }

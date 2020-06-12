@@ -87,8 +87,14 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
         $r->get('/users/{id}/edit', ["app\Controllers\Admin\UserController", 'edit']);
 
         $r->get('/news', ["app\Controllers\Admin\NewsController", 'index']);
+        $r->get('/news/createView', ["app\Controllers\Admin\NewsController", 'createView']);
         $r->get('/news/create', ["app\Controllers\Admin\NewsController", 'create']);
-        $r->get('/news/edit', ["app\Controllers\Admin\NewsController", 'edit']);
+        $r->post('/news/updateNew/{id}', ["app\Controllers\Admin\NewsController", 'updateNew']);
+        $r->get('/news/edit/{id}', ["app\Controllers\Admin\NewsController", 'edit']);
+        $r->get('/news/delete/{id}', ["app\Controllers\Admin\NewsController", 'deleteNew']);
+
+        
+        
 
         });
 

@@ -28,13 +28,14 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <a href="/admin/news/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
+              <a href="/admin/news/createView" class="btn btn-success btn-lg">Добавить</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>#</th>
                     <th>Название</th>
                     <th>Содержание</th>
+                    <th>Изображение</th>
                     <th>Действия</th>
                   </tr>
                 </thead>
@@ -45,11 +46,14 @@
                     <td><?php echo $new['title']; ?></td>
                     <td><?php echo $new['description']; ?></td>
                     <td>
+                      <img src="<?php echo "/uploads/" . $new['image']; ?>" width="200" alt="">
+                    </td>
+                    <td>
 
-                      <a href="/admin/news/edit" class="btn btn-warning">
+                      <a href="/admin/news/edit/<?php echo $new['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="/admin/news/create" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/admin/news/delete/<?php echo $new['id']; ?>" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

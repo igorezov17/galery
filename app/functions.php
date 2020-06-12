@@ -39,18 +39,12 @@ function redirect($path)
     exit;
 }
 
-
-/*function getAllCategory()
+function back()
 {
-    return $this->database->getAll();
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;
 }
 
-/*function includeAuth()
-{
-    $pdo = new PDO("mysql:host=localhost; dbname=tests; charset=utf8", "root", "");
-    $auth = new Auth($pdo);
-    return $auth;
-}*/
 
 function error404()
 {

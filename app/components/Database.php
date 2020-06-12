@@ -125,6 +125,7 @@ class Database
         $sth->execute($insert->getBindValues()); 
 
         $name = $insert->getLastInsertIdName('id');
+        
         return $this->pdo->lastInsertId($name);
     }
 
@@ -158,5 +159,19 @@ class Database
         $sth->bindValue(':id', $id);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function delete($table,$id)
+    {
+        $delete = $this->queryFactory->newDelete();
+
+        $delete
+            ->from($table)
+            ->where('id = :id')
+            ->bindValue('id', $id);
+
+        $sth = $this->pdo->prepare($delete->getStatement());
+
+        $sth->execute($delete->getBindValues());
     }
 }

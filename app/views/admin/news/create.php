@@ -25,25 +25,34 @@
             <div class="box-body">
                 <div class="">
                     <div class="box-header">
-                        <h2 class="box-title">Добавить категорию</h2>
+                        <h2 class="box-title">Добавить пост</h2>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-md-6">
 
-                            <form action="/admin/photos/store" method="post" enctype="multipart/form-data">
+                            <form action="/admin/news/create" method="get" enctype="multipart/form-data">
                             <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="title">
                         <label for="exampleInputEmail1">Новость</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="description">
                       </div>
+
+
+
+                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Изображение</label>
+                                        <input type="file" id="exampleInputEmail1" name="image">
+
+                                    </div>
 
                       <div class="form-group">
                         <button class="btn btn-success">Добавить</button>
                       </div>
-                            </form>
+                            
                         </div>
+                        </form>
                     </div>
                     <!-- /.box-body -->
                 </div>

@@ -29,4 +29,17 @@ class CategoryController extends Controller
 
         echo $this->view->render("admin/category/create");
     }
+
+
+    public function createNew()
+    {
+
+    }
+
+    public function update()
+    {
+        
+    }
+
+
 }

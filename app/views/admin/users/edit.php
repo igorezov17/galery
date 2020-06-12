@@ -33,25 +33,26 @@
                     <form action="" method="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Имя</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Murzilka">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="Murzilka" name="username">
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="murzilka@marlindev.ru">
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="murzilka@marlindev.ru" name="email">
                       </div>
 
-                      <div class="form-group">
+                      <!--<div class="form-group">
                         <label for="exampleInputEmail1">Пароль</label>
                         <input type="password" class="form-control" id="exampleInputEmail1" >
-                      </div>
+                      </div>-->
+
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Аватар</label>
-                        <input type="file" id="exampleInputEmail1" >
-                        <br> 
-                        <img src="../assets/img/avatar04.png" width="200" alt="">
-                      </div>
+                                        <label for="exampleInputEmail1">Аватар</label>
+                                        <input type="file" id="exampleInputEmail1" name="image">
+                                        
+                                        <!--<img src="<?php //echo "/uploads/" . $user['image']; ?>" width="200" >-->
+                                    </div>
 
                       <div class="form-group">
                         <button class="btn btn-warning">Изменить</button>

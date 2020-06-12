@@ -6,7 +6,7 @@ use PDO;
 use Aura\SqlQuery\QueryFactory;
 use app\components\Database;
 
-class Category
+class News
 {
     private $pdo;
     private $queryFactory;
