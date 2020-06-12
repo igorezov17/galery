@@ -31,17 +31,18 @@
                     <div class="box-body">
                         <div class="col-md-6">
 
-                            <form action="/admin/photos/store" method="post" enctype="multipart/form-data">
+                            <form action="/admin/category/createNew" method="get" enctype="multipart/form-data">
                             <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="title">
                       </div>
 
                       <div class="form-group">
                         <button class="btn btn-success">Добавить</button>
                       </div>
-                            </form>
+                            
                         </div>
+                        </form>
                     </div>
                     <!-- /.box-body -->
                 </div>

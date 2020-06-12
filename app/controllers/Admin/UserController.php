@@ -29,4 +29,6 @@ class UserController extends Controller
     {
         echo $this->view->render('admin/users/edit');
     }
+
+    
 }

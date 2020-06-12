@@ -77,6 +77,9 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
         $r->get('/category', ["app\Controllers\Admin\CategoryController", 'index']);
         $r->get('/category/{id}/edit', ["app\Controllers\Admin\CategoryController", 'edit']);
         $r->get('/category/create', ["app\Controllers\Admin\CategoryController", 'create']);
+        $r->get('/category/createNew', ["app\Controllers\Admin\CategoryController", 'createNew']);
+        $r->get('/category/delete/{id}', ["app\Controllers\Admin\CategoryController", 'delete']);
+        $r->get('/category/update/{id}', ["app\Controllers\Admin\CategoryController", 'update']);
 
         $r->get('/photos', ["app\Controllers\Admin\PhotosController", 'index']);
         $r->get('/photos/{id}/edit', ["app\Controllers\Admin\PhotosController", 'edit']);

@@ -51,7 +51,7 @@
                       <a href="/admin/category/<?php echo $category['id']; ?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/admin/category/delete/<?php echo $category['id']; ?>" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

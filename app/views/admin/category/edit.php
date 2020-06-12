@@ -29,11 +29,12 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
                 <div class="col-md-6">
-                    <form action="" action="post">
+                    <form action="/admin/category/update/<?php echo $id; ?>" method="GET"   enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="Компьютеры" name="title">
                       </div>
 
                       <div class="form-group">

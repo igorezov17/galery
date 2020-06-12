@@ -22,14 +22,11 @@ class Category
 
     public function update($table, $id)
     {
-        //$id = auth()->getUserId();
         $update = $this->queryFactory->newUpdate();
         $update
         ->table($table)                  // update this table
         ->cols([                        // bind values as "SET bar = :bar"
-            'title' => $_POST['title'],
-            'description' =>  $_POST['description'],
-            'image' => $_FILES['image']['name']
+            'title' => $_GET['title'],
         ])
            // raw value as "(ts) VALUES (NOW())"
         ->where('id = :id')      // bind this value to the condition
@@ -44,4 +41,6 @@ class Category
         return $sth->execute($update->getBindValues());
             
     }
+
+    
 }
