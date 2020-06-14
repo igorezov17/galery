@@ -39,7 +39,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Навигация</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="/admin/photos"><i class="fa fa-image"></i> <span>Все картинки</span></a></li>
+            <!--<li><a href="/admin/photos"><i class="fa fa-image"></i> <span>Все картинки</span></a></li>-->
             <li><a href="/admin/category"><i class="fa fa-list"></i> <span>Категории</span></a></li>
             <li><a href="/admin/users"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
             <li><a href="/admin/news"><i class="fa fa-newspaper-o"></i> <span>Все новости</span></a></li>

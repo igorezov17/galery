@@ -30,45 +30,29 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="col-md-6">
-                    <form action="" method="post">
+                    <form action="/admin/users/createUser" method="POST">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Имя</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="username" >
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" >
+                        <input type="email" class="form-control"  name="email">
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Пароль</label>
-                        <input type="password" class="form-control" id="exampleInputEmail1" >
+                        <input type="password" class="form-control" name="password">
                       </div>
 
-                      <div class="form-group">
-                        <label>Роль</label>
-                        <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected">Обычный пользователь</option>
-                          <option>Администратор</option>
-                        </select>
-                      </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Аватар</label>
-                        <input type="file" id="exampleInputEmail1" >
+                        <input type="file"  name="image">
                       </div>
 
-                      <div class="form-group">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox">
-                            Бан
-                          </label>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
+                      <div class="control">
                         <button class="btn btn-success">Добавить</button>
                       </div>
                     </form>

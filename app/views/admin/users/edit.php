@@ -30,15 +30,16 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="col-md-6">
-                    <form action="" method="post">
+                    <form action="/admin/users/<?php echo $user['id'];?>/update" method="post">
                       <div class="form-group">
+
                         <label for="exampleInputEmail1">Имя</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="Murzilka" name="username">
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $user['username']; ?>" name="username">
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="murzilka@marlindev.ru" name="email">
+                        <input type="email" class="form-control" id="exampleInputEmail1"  value="<?php echo $user['email']; ?>" name="email">
                       </div>
 
                       <!--<div class="form-group">
@@ -46,15 +47,13 @@
                         <input type="password" class="form-control" id="exampleInputEmail1" >
                       </div>-->
 
-
                       <div class="form-group">
-                                        <label for="exampleInputEmail1">Аватар</label>
+                                        <label for="exampleInputEmail1">Изображение</label>
                                         <input type="file" id="exampleInputEmail1" name="image">
-                                        
-                                        <!--<img src="<?php //echo "/uploads/" . $user['image']; ?>" width="200" >-->
+
                                     </div>
 
-                      <div class="form-group">
+                      <div class="control">
                         <button class="btn btn-warning">Изменить</button>
                       </div>
                     </form>

@@ -27,6 +27,7 @@
               <h2 class="box-title">Все пользователи</h2>
             </div>
             <!-- /.box-header -->
+            <?php echo flash(); ?>
             <div class="box-body">
               <a href="/admin/users/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
@@ -51,15 +52,35 @@
                     <td>
                       <img src="<?php echo "/uploads/" . $user['image']; ?>" width="200" alt="">
                     </td>
-                    <td>
-                      <span class="btn btn-success">Активный</span>
-                    </td>
+                          <?php if ($user['status'] == 0)
+                          { ?>
+                            <td>
+                            <form action="/admin/users/<?php echo $user['id'] ?>/role" method="POST">
+                                  <button type="submite" name="name" value="activ" class="btn btn-success">Активный</></button>
+                              </form>
+                            </td>
+                          <?php } else if ($user['status'] == 1) {?>
+                            <td>
+
+                              <form action="/admin/users/<?php echo $user['id'] ?>/role" method="POST">
+                                    <button type="submite" name="name" value="ban" class="btn btn-danger">Бан</></button>
+                              </form>
+                            </td>
+                         <?php  } else if ($user['status'] == 2) {?>
+                            <td>
+
+                          <form action="#" method="POST">
+                                <button type="submite" name="name" value="ban" class="btn btn-warning">Админ</></button>
+                          </form>
+                          </td>
+                         <?php } ?>
+
                     <td>
 
-                      <a href="/admin/users/{id}/edit" class="btn btn-warning">
+                      <a href="/admin/users/<?php echo $user['id']; ?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/admin/users/<?php echo $user['id']; ?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

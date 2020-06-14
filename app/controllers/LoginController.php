@@ -32,7 +32,7 @@ class LoginController
 
     public function loginin()
     {
-
+        
 
         try {
 
@@ -42,9 +42,9 @@ class LoginController
                 // keep logged in for one year
                 $rememberDuration = (int) (60 * 60 * 24 * 365.25);
             }
-
+            
             $this->auth->login($_POST['login'], $_POST['password'], $rememberDuration);
-        
+            
             redirect('/');
         }
         catch (\Delight\Auth\InvalidEmailException $e) {

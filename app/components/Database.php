@@ -68,12 +68,13 @@ class Database
             $sth->execute($update->getBindValues());
     }
 
-    public function getOne($id)
+    public function getOne($id, $table)
     {
+        
         $select = $this->queryFactory->newSelect();
         $select
             ->cols(['*'])
-            ->from('photos')
+            ->from($table)
             ->bindValues([':id' => $id])
             ->where('id = :id');
 
@@ -159,6 +160,71 @@ class Database
         $sth->bindValue(':id', $id);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function role($table, $id, $role)
+    {
+
+        $update = $this->queryFactory->newUpdate();
+        $update
+        ->table($table)                  // update this table
+        ->cols([                        // bind values as "SET bar = :bar"
+            'status' => $role,
+        ])
+           // raw value as "(ts) VALUES (NOW())"
+        ->where('id = :id')      // bind this value to the condition
+        ->bindValues([                  // bind these values to the query
+            ':id' => $id,
+
+        ]);
+
+        // prepare the statement
+        $sth = $this->pdo->prepare($update->getStatement());
+            
+        // execute with bound values
+        return $sth->execute($update->getBindValues());
+    }
+
+
+    public function updateUser($table, $id)
+    {
+
+        $update = $this->queryFactory->newUpdate();
+        $update
+        ->table($table)                  // update this table
+        ->cols([                        // bind values as "SET bar = :bar"
+            'email' => $_POST['email'],
+            'username' =>  $_POST['username'],
+            'image' => $_POST['image']
+        ])
+           // raw value as "(ts) VALUES (NOW())"
+        ->where('id = :id')      // bind this value to the condition
+        ->bindValues([                  // bind these values to the query
+            ':id' => $id
+        ]);
+
+        // prepare the statement
+        $sth = $this->pdo->prepare($update->getStatement());
+
+        // execute with bound values
+        return $sth->execute($update->getBindValues());
+            
+    }
+
+    public function insertImage($image, $table)
+    {
+        $insert = $this->queryFactory->newInsert();
+        $insert
+            ->into($table)
+            ->cols($image);
+
+        $sth = $this->pdo->prepare($insert->getStatement());
+        $sth->execute($insert->getBindValues()); 
+        dd($sth);
+        $name = $insert->getLastInsertIdName('id');
+        
+        return $this->pdo->lastInsertId($name);
     }
 
     public function delete($table,$id)

@@ -64,6 +64,8 @@ class ProfileController extends Controller
 
     public function updateProfile()
     {
+
+
         if ($this->userModel->update('users'))
         {
             flash()->success(['Данные успешно обновлены']);
