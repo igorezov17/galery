@@ -29,7 +29,7 @@ class HomeController
 
     public function show($id)
     {
-        $photo = $this->database->getOne($id);
+        $photo = $this->database->getOne($id, 'photos');
         $ImageAndUsers = $this->homeModel->getImageAndUser();
         echo $this->view->render('image/show', ['image' => $photo, 'imagesandusers' => $ImageAndUsers]);
     }

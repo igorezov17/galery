@@ -95,28 +95,20 @@ class ImageController extends Controller
 
     public function rotate($id)
     {
-        /*$image = $this->database->getOne($id);
+        $image = $this->database->getOne($id, 'photos');
 
-        $path = '../../uploads/'.$image['image'];
-        //$path = $image['image'];
+        $path = './uploads/'.$image['image'];
+  
 
         $filename = $image['image'];
-        
-        //dd('dynhfyfn');
-        //$degrees = 90;
-        header('Content-type: image/jpg');
+
 
         $source = imagecreatefromjpeg($path);
 
-        $rotate = imagerotate($source, 90, 0);
+       $a=  imagerotate($source, 90, 0);
 
-        imagejpeg($rotate);
-        imagedestroy($source);
-        imagedestroy($rotate);
-        redirect('/myimages');*/
-        $image = $this->database->getOne($id);
-        $image = 'uploads/image.jpg';
-
+        imagejpeg($a, $path);
+        redirect('/myimages');
 
 $img = imagecreatefromjpeg($image);    // Картинка
     $degrees = 90;                         //Наклон картинки

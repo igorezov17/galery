@@ -30,9 +30,6 @@
                   <div class="media my-photo">
                     <div class="media-left">
                       <p class="title is-5">
-                        <a href="/image/<?php echo $image['id']?>/edit" class="button is-warning">
-                          <i class="fa fa-edit"></i>
-                        </a>
                           <a href="/image/rotate/<?php echo $image['id']?>" class="button is-warning">
                             <i class="fa fa-history"></i>
                         </a>
